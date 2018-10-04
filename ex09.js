@@ -26,10 +26,8 @@ function getUrlData(url) {
 function watchBuffers() {
     setTimeout(
         () => {
-            if (openBuffers === 0) {
-                for (let buffer in buffers)
-                    console.log(buffers[buffer])
-            }
+            if (openBuffers === 0)
+                urls.forEach(url => console.log(buffers[url]))
             else
                 watchBuffers();
         },
